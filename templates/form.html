@@ -7,25 +7,31 @@
   <title>Madlib Form</title>
 </head>
 <body>
-  <form>
-    <h1>Madlibs</h1>
-    <label for="place">Place:</label>
-    <input type="text" name="place">
-    <br>
-    <label for="noun">Noun:</label>
-    <input type="text" name="noun">
-    <br>
-    <label for="verb">Verb:</label>
-    <input type="text" name="verb">
-    <br>
-    <label for="adj">Adjective:</label>
-    <input type="text" name="adj">
-    <br>
-    <label for="pluralnoun">Plural_Noun:</label>
-    <input type="text" name="pluralnoun">
-    <br>
+  <h1>Madlibs</h1>
+  <form action="/story">
+    {% for prompt in prompts %}
+      <label for="{{prompt}}">{{ prompt }}:</label>
+      <input type="text" name="{{prompt}}">
+      <br>
+    {% endfor %}
     <button>Submit</button>
-
   </form>
 </body>
 </html>
+
+
+<!-- <label for="place">Place:</label>
+<input type="text" name="place">
+<br>
+<label for="noun">Noun:</label>
+<input type="text" name="noun">
+<br>
+<label for="verb">Verb:</label>
+<input type="text" name="verb">
+<br>
+<label for="adj">Adjective:</label>
+<input type="text" name="adj">
+<br>
+<label for="pluralnoun">Plural_Noun:</label>
+<input type="text" name="pluralnoun">
+<br> -->
