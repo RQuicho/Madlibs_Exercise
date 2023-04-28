@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Madlib Form</title>
-</head>
-<body>
-  <h1>Madlibs</h1>
+{% extends 'base.html' %}
+
+{% block title %}Madlibs{% endblock %}
+
+{% block h1 %}Madlibs{% endblock %}
+
+{% block content %}
+
   <form action="/story">
     {% for prompt in prompts %}
       <label for="{{prompt}}">{{ prompt }}:</label>
@@ -16,8 +14,8 @@
     {% endfor %}
     <button>Submit</button>
   </form>
-</body>
-</html>
+
+{% endblock %}
 
 
 <!-- <label for="place">Place:</label>
